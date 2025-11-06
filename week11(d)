@@ -1,0 +1,7 @@
+// Class, Constructor, Properties, Methods, and Access Speciiers class Student { // Properties with access speciiers private studentId: number; // accessible only within the class public name: string; // accessible anywhere protected course: string; // accessible within class and subclass // Constructor to initialize properties constructor(id: number, name: string, course: string) { this.studentId = id; this.name = name; this.course = course;
+} // Public method to display student details public displayDetails(): void { console.log("Student Details:"); console.log(`ID: ${this.studentId}`); console.log(`Name: ${this.name}`); console.log(`Course: ${this.course}`);
+}
+// Private method private calculateGrade(): string { return "A+";
+}
+// Public method using private method public showGrade(): void {console.log(`Grade: ${this.calculateGrade()}`); }
+} // Creating an object of the class let student1 = new Student(101, "Srilakshmi", "TypeScript"); // Accessing public methods student1.displayDetails(); student1.showGrade(); // Accessing properties directly console.log(student1.name); // allowed (public) // console.log(student1.studentId); // Error: private property // console.log(student1.course); // Error: protected property
